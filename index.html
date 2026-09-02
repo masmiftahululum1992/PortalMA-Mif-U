@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Website Resmi MAS Miftahul Ulum Lenteng - Mencetak generasi Islami yang cerdas, berakhlak mulia, dan berwawasan digital.">
-  <title>MAS Miftahul Ulum Lenteng - Sumenep</title>
+  <meta name="description" content="Portal E-Learning & Hub Kreativitas Digital Resmi MAS Miftahul Ulum Lenteng - Sumenep.">
+  <title>E-Learning & Digital Hub - MAS Miftahul Ulum Lenteng</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -12,10 +16,15 @@
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
           colors: {
-            primary: '#10b981',   // Emerald 500
-            secondary: '#047857', // Emerald 700
-            accent: '#f59e0b'    // Amber 500
+            primary: '#059669',     // Emerald 600
+            secondary: '#0f172a',   // Slate 900
+            brand: '#4f46e5',       // Indigo 600 (E-learning Accent)
+            accent: '#f59e0b',      // Amber 500
+            surface: '#f8fafc'      // Slate 50
           }
         }
       }
@@ -26,39 +35,69 @@
     .page-section { display: none; }
     .page-section.active { display: block; }
     .modal-active { overflow: hidden; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+    }
   </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen text-gray-800 font-sans antialiased">
+<body class="bg-slate-50 flex flex-col min-h-screen text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
 
-  <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-gray-100">
+  <div class="bg-secondary text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full font-medium border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> E-Learning Portal Active
+        </span>
+        <span>Tahun Ajaran 2026/2027</span>
+      </div>
+      <div class="flex items-center space-x-4 text-xs">
+        <a href="#" onclick="navigateTo('kontak')" class="hover:text-emerald-400 transition">Bantuan IT</a>
+        <span>•</span>
+        <a href="#" onclick="navigateTo('ppdb')" class="hover:text-emerald-400 transition">Info PPDB</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         
         <div class="flex items-center">
           <a href="#" onclick="navigateTo('beranda')" class="flex-shrink-0 flex items-center space-x-3 group">
             <img src="https://drive.google.com/thumbnail?id=1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ&sz=w800" alt="Logo MAS Miftahul Ulum" class="h-10 w-auto object-contain transition transform group-hover:scale-105" referrerpolicy="no-referrer">
-            <div class="hidden sm:flex flex-col">
-              <span class="font-bold text-lg md:text-xl text-primary leading-tight">MAS Miftahul Ulum</span>
-              <span class="text-xs text-gray-500 font-medium tracking-wide">Lenteng - Sumenep</span>
+            <div class="flex flex-col">
+              <span class="font-extrabold text-lg text-slate-900 leading-tight group-hover:text-primary transition">MAS Miftahul Ulum</span>
+              <span class="text-[11px] text-slate-500 font-medium tracking-wider uppercase">Portal Resmi Madrasah & E-Learning</span>
             </div>
           </a>
         </div>
         
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="#" onclick="navigateTo('beranda')" class="nav-link text-primary font-semibold transition cursor-pointer" data-target="beranda">Beranda</a>
-          <a href="#" onclick="navigateTo('profil')" class="nav-link text-gray-600 hover:text-primary transition font-medium cursor-pointer" data-target="profil">Profil</a>
-          <a href="#" onclick="navigateTo('program')" class="nav-link text-gray-600 hover:text-primary transition font-medium cursor-pointer" data-target="program">Program</a>
-          <a href="#" onclick="navigateTo('berita')" class="nav-link text-gray-600 hover:text-primary transition font-medium cursor-pointer flex items-center gap-1.5" data-target="berita">
-            Berita
-            <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Live</span>
+        <div class="hidden lg:flex items-center space-x-1 font-medium text-sm">
+          <a href="#" onclick="navigateTo('beranda')" class="nav-link text-primary font-semibold px-3 py-2 rounded-lg hover:bg-slate-100 transition" data-target="beranda">Beranda</a>
+          
+          <a href="#" onclick="navigateTo('elearning')" class="nav-link text-slate-600 hover:text-brand px-3 py-2 rounded-lg hover:bg-indigo-50 transition flex items-center gap-1.5" data-target="elearning">
+            <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+            E-Learning
           </a>
-          <a href="#" onclick="navigateTo('mading')" class="nav-link text-gray-600 hover:text-primary transition font-medium cursor-pointer" data-target="mading">Mading</a>
-          <a href="#" onclick="navigateTo('kontak')" class="nav-link text-gray-600 hover:text-primary transition font-medium cursor-pointer" data-target="kontak">Kontak</a>
-          <a href="#" onclick="navigateTo('ppdb')" class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-lg font-semibold transition cursor-pointer shadow-sm hover:shadow-md">PPDB Online</a>
+
+          <a href="#" onclick="navigateTo('kreativitas')" class="nav-link text-slate-600 hover:text-amber-600 px-3 py-2 rounded-lg hover:bg-amber-50 transition flex items-center gap-1.5" data-target="kreativitas">
+            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Kreativitas Siswa
+          </a>
+
+          <a href="#" onclick="navigateTo('berita')" class="nav-link text-slate-600 hover:text-primary px-3 py-2 rounded-lg hover:bg-slate-100 transition" data-target="berita">Berita & Pengumuman</a>
+          <a href="#" onclick="navigateTo('profil')" class="nav-link text-slate-600 hover:text-primary px-3 py-2 rounded-lg hover:bg-slate-100 transition" data-target="profil">Profil</a>
+          <a href="#" onclick="navigateTo('kontak')" class="nav-link text-slate-600 hover:text-primary px-3 py-2 rounded-lg hover:bg-slate-100 transition" data-target="kontak">Kontak</a>
+          
+          <div class="pl-3 border-l border-slate-200 flex items-center gap-2">
+            <a href="#" onclick="navigateTo('ppdb')" class="bg-primary hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold transition shadow-sm hover:shadow text-xs">PPDB Online</a>
+          </div>
         </div>
         
-        <div class="flex items-center md:hidden">
-          <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none p-2 rounded-md hover:bg-gray-100" aria-label="Buka Menu Navigasi">
+        <div class="flex items-center lg:hidden">
+          <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary p-2 rounded-lg hover:bg-slate-100" aria-label="Buka Navigasi">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -67,15 +106,15 @@
       </div>
     </div>
     
-    <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 shadow-lg">
-      <div class="px-4 pt-3 pb-4 space-y-2">
-        <a href="#" onclick="navigateTo('beranda')" class="nav-link-mobile block px-3 py-2 text-primary font-semibold rounded-lg bg-emerald-50" data-target="beranda">Beranda</a>
-        <a href="#" onclick="navigateTo('profil')" class="nav-link-mobile block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg" data-target="profil">Profil</a>
-        <a href="#" onclick="navigateTo('program')" class="nav-link-mobile block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg" data-target="program">Program</a>
-        <a href="#" onclick="navigateTo('berita')" class="nav-link-mobile block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg" data-target="berita">Berita</a>
-        <a href="#" onclick="navigateTo('mading')" class="nav-link-mobile block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg" data-target="mading">Mading</a>
-        <a href="#" onclick="navigateTo('kontak')" class="nav-link-mobile block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg" data-target="kontak">Kontak</a>
-        <a href="#" onclick="navigateTo('ppdb')" class="block w-full text-center px-4 py-2.5 bg-primary text-white font-semibold rounded-lg shadow mt-2">PPDB Online</a>
+    <div id="mobile-menu" class="lg:hidden hidden bg-white border-b border-slate-200 shadow-xl">
+      <div class="px-4 pt-3 pb-4 space-y-2 text-sm font-medium">
+        <a href="#" onclick="navigateTo('beranda')" class="block px-3 py-2 rounded-lg bg-emerald-50 text-primary font-semibold">Beranda</a>
+        <a href="#" onclick="navigateTo('elearning')" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">E-Learning Platform</a>
+        <a href="#" onclick="navigateTo('kreativitas')" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Wadah Kreativitas Siswa</a>
+        <a href="#" onclick="navigateTo('berita')" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Berita & Pengumuman</a>
+        <a href="#" onclick="navigateTo('profil')" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Profil Madrasah</a>
+        <a href="#" onclick="navigateTo('kontak')" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Kontak & Lokasi</a>
+        <a href="#" onclick="navigateTo('ppdb')" class="block text-center px-4 py-2.5 bg-primary text-white font-semibold rounded-lg shadow mt-3">PPDB Online</a>
       </div>
     </div>
   </nav>
@@ -83,201 +122,356 @@
   <main class="flex-grow">
     
     <section id="beranda" class="page-section active">
-      <div class="bg-secondary relative py-24 text-center text-white bg-cover bg-center" style="background-image: linear-gradient(rgba(4, 120, 87, 0.88), rgba(4, 120, 87, 0.88)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1600');">
-        <div class="max-w-4xl mx-auto px-4">
-          <img src="https://drive.google.com/thumbnail?id=1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ&sz=w800" alt="Logo Madrasah" class="h-28 w-28 object-contain mx-auto mb-6 bg-white rounded-full p-2.5 shadow-xl" referrerpolicy="no-referrer">
-          <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">Selamat Datang di MAS Miftahul Ulum</h1>
-          <p class="text-lg md:text-xl mb-8 text-emerald-100 max-w-2xl mx-auto font-light">Mencetak generasi Islami yang cerdas, berakhlak mulia, dan berwawasan digital di Kecamatan Lenteng.</p>
-          <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#" onclick="navigateTo('ppdb')" class="bg-white text-secondary font-bold py-3.5 px-8 rounded-xl hover:bg-emerald-50 transition shadow-lg inline-block">Daftar PPDB Sekarang</a>
-            <a href="#" onclick="navigateTo('profil')" class="bg-emerald-800/60 hover:bg-emerald-800 text-white font-semibold py-3.5 px-8 rounded-xl border border-emerald-400/30 transition shadow-lg inline-block">Jelajahi Profil</a>
+      <div class="relative bg-secondary text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-500/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-brand/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 text-center lg:text-left">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
+                🎓 Portal Pendidikan Digital & Karya Siswa
+              </span>
+              <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                Pendidikan Islami Berorientasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-400">Digital & Kreatif</span>
+              </h1>
+              <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl font-light leading-relaxed mx-auto lg:mx-0">
+                Selamat Datang di <strong>MAS Miftahul Ulum Lenteng</strong>. Platform terpadu pembelajaran online, ruang berekspresi seni dan karya digital, serta pusat informasi resmi madrasah.
+              </p>
+              
+              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#" onclick="navigateTo('elearning')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-8 rounded-xl transition shadow-lg hover:shadow-emerald-500/25 inline-flex items-center justify-center gap-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  Akses E-Learning
+                </a>
+                <a href="#" onclick="navigateTo('kreativitas')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-3.5 px-8 rounded-xl border border-slate-700 transition inline-flex items-center justify-center gap-2">
+                  <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                  Galeri Karya Siswa
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border border-white/20">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl font-bold">
+                    📚
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900">Pembelajaran Interaktif</h3>
+                    <p class="text-xs text-slate-600 mt-0.5">Modul digital, kuis online, & materi Aswaja terstruktur.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border border-white/20">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl font-bold">
+                    🎨
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900">Ruang Ekspresi Siswa</h3>
+                    <p class="text-xs text-slate-600 mt-0.5">Publikasi puisi, cerpen, seni digital, dan karya ilmiah.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card p-6 rounded-2xl text-slate-800 shadow-xl border border-white/20">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center text-xl font-bold">
+                    ⚡
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900">Update Cepat & Terpadu</h3>
+                    <p class="text-xs text-slate-600 mt-0.5">Pengumuman akademis & PPDB terintegrasi real-time.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
       <div class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-primary pl-4">Sambutan Kepala Madrasah</h2>
-            <p class="text-gray-600 mb-4 text-justify leading-relaxed">Assalamu'alaikum Warahmatullahi Wabarakatuh. Puji syukur kehadirat Allah SWT, kami menyambut Anda di portal resmi MAS Miftahul Ulum Lenteng. Kami berkomitmen memberikan pendidikan terbaik yang memadukan nilai-nilai agama dengan kecakapan ilmu pengetahuan dan teknologi (IPTEK).</p>
-            <p class="text-gray-600 text-justify leading-relaxed">Madrasah kami senantiasa bertransformasi menyesuaikan dengan perkembangan zaman untuk melahirkan lulusan yang kompetitif dan tangguh secara spiritual maupun intelektual.</p>
-            <div class="mt-6 font-semibold text-primary italic flex items-center gap-2">
-              <span class="w-8 h-0.5 bg-primary inline-block"></span>
-              Hawanif, S.Ag.,M.M.Pd (kepala MA MIFTAHUL ULUM)
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-4 text-center">
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-              <h3 class="text-4xl font-extrabold text-primary mb-1">100+</h3>
-              <p class="text-gray-600 text-sm font-medium">Siswa Aktif</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-              <h3 class="text-4xl font-extrabold text-primary mb-1">10+</h3>
-              <p class="text-gray-600 text-sm font-medium">Guru & Staf Pengajar</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-              <h3 class="text-4xl font-extrabold text-primary mb-1">7</h3>
-              <p class="text-gray-600 text-sm font-medium">Ruang Kelas</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-              <h3 class="text-4xl font-extrabold text-primary mb-1">100%</h3>
-              <p class="text-gray-600 text-sm font-medium">Berhaluan Aswaja</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="profil" class="page-section py-12">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-10 border-b-4 border-primary pb-2 inline-block mx-auto block w-max">Profil Madrasah</h1>
-        
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-8 border-l-4 border-l-secondary">
-          <h2 class="text-2xl font-semibold text-primary mb-4 flex items-center gap-2"><span>🏛️</span> Sejarah Singkat</h2>
-          <p class="text-gray-600 text-justify leading-relaxed">MAS Miftahul Ulum Lenteng didirikan dengan tujuan menjadi wadah pendidikan Islam terpadu untuk masyarakat Lenteng, Kabupaten Sumenep dan sekitarnya. Dengan semangat memajukan pendidikan yang berakar pada nilai ahlussunnah wal jamaah, madrasah ini terus beradaptasi dengan kemajuan peradaban dan teknologi dari masa ke masa.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 border-t-4 border-t-primary">
-            <h2 class="text-2xl font-semibold text-primary mb-4 text-center">Visi</h2>
-            <p class="text-gray-700 text-center italic font-medium leading-relaxed">"Terwujudnya generasi yang bertaqwa, berilmu amaliah, beramal ilmiah, dan cakap digital dalam menyongsong masa depan."</p>
-          </div>
-          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 border-t-4 border-t-primary">
-            <h2 class="text-2xl font-semibold text-primary mb-4 text-center">Misi</h2>
-            <ul class="list-disc pl-5 text-gray-600 space-y-3 text-justify">
-              <li>Meningkatkan kualitas pembelajaran yang aktif, inovatif, dan menyenangkan.</li>
-              <li>Mengintegrasikan pendidikan agama berhaluan Aswaja dengan ilmu pengetahuan dan teknologi (IPTEK).</li>
-              <li>Mengembangkan potensi minat, bakat, dan akhlakul karimah peserta didik secara optimal.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="program" class="page-section py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-10 border-b-4 border-primary pb-2 inline-block mx-auto block w-max">Program & Fasilitas</h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-            <div class="w-12 h-12 bg-emerald-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-4">💻</div>
-            <h2 class="text-xl font-bold text-gray-800 mb-4">Fasilitas Penunjang</h2>
-            <ul class="space-y-3 text-gray-600">
-              <li class="flex items-start"><span class="text-primary mr-2 font-bold">✓</span> Laboratorium Komputer terkoneksi Wi-Fi.</li>
-              <li class="flex items-start"><span class="text-primary mr-2 font-bold">✓</span> Perpustakaan umum dan koleksi Kitab Kuning.</li>
-              <li class="flex items-start"><span class="text-primary mr-2 font-bold">✓</span> Ruang kelas multimedia yang nyaman.</li>
-              <li class="flex items-start"><span class="text-primary mr-2 font-bold">✓</span> Masjid untuk sarana ibadah luas.</li>
-            </ul>
-          </div>
-
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-            <div class="w-12 h-12 bg-emerald-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-4">🏆</div>
-            <h2 class="text-xl font-bold text-gray-800 mb-4">Ekstrakurikuler</h2>
-            <ul class="space-y-3 text-gray-600">
-              <li class="flex items-center"><span class="mr-3">⛺</span> Gerakan Pramuka</li>
-              <li class="flex items-center"><span class="mr-3">🚑</span> Palang Merah Remaja (PMR)</li>
-              <li class="flex items-center"><span class="mr-3">📖</span> Seni Baca Al-Qur'an & Tahfidz</li>
-              <li class="flex items-center"><span class="mr-3">⚽</span> Olahraga (Futsal & Voli)</li>
-              <li class="flex items-center"><span class="mr-3">🎤</span> Muhadhoroh & Public Speaking</li>
-            </ul>
-          </div>
-
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-            <div class="w-12 h-12 bg-emerald-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-4">📚</div>
-            <h2 class="text-xl font-bold text-gray-800 mb-4">Kurikulum Unggulan</h2>
-            <p class="text-gray-600 text-justify leading-relaxed">Selain kurikulum nasional Kemenag, kami memadukannya dengan muatan lokal kepesantrenan (Kajian Kitab Kuning) untuk memperkuat aqidah dan akhlak, serta literasi digital sebagai bekal bersaing di era modern.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="berita" class="page-section py-12 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-          <div>
-            <h1 class="text-3xl font-bold text-gray-800 border-b-4 border-primary pb-2 inline-block">Berita & Pengumuman</h1>
-            <p class="text-xs text-gray-500 mt-2 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Terhubung ke Google Spreadsheet Database
-            </p>
-          </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <button onclick="fetchBerita()" class="text-xs font-semibold bg-white border border-gray-300 text-gray-700 px-3.5 py-2 rounded-lg hover:bg-gray-100 flex items-center transition shadow-sm">
-            <svg class="w-4 h-4 mr-1.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-            Muat Ulang
-          </button>
-        </div>
-
-        <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="col-span-full text-center py-12">
-            <p class="text-gray-500 text-lg">Memuat data berita...</p>
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs font-bold text-primary uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md">Sambutan Kepala Madrasah</span>
+            <h2 class="text-3xl font-extrabold text-slate-900">Mewujudkan Generasi Islami, Cerdas, & Adaptif Teknologi</h2>
+            <p class="text-slate-600 leading-relaxed text-justify">
+              Assalamu'alaikum Warahmatullahi Wabarakatuh. Puji syukur kehadirat Allah SWT. MAS Miftahul Ulum Lenteng terus berkomitmen menghadirkan inovasi pendidikan Islam berhaluan Ahlussunnah wal Jama'ah yang adaptif terhadap era digital.
+            </p>
+            <p class="text-slate-600 leading-relaxed text-justify">
+              Melalui platform E-Learning dan Mading Digital ini, kami memfasilitasi ruang belajar fleksibel serta wadah bagi seluruh siswa untuk menyalurkan bakat sastra, seni, dan karya ilmiah secara luas.
+            </p>
+            
+            <div class="pt-4 border-t border-slate-100 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-lg">
+                H
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900">Hawanif, S.Ag., M.M.Pd.</h4>
+                <p class="text-xs text-slate-500">Kepala MA Miftahul Ulum Lenteng</p>
+              </div>
+            </div>
           </div>
+
+          <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition text-center">
+              <div class="text-3xl lg:text-4xl font-extrabold text-primary mb-1">100+</div>
+              <div class="text-sm font-semibold text-slate-800">Siswa Aktif</div>
+              <p class="text-xs text-slate-500 mt-1">Terdaftar Akademik</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition text-center">
+              <div class="text-3xl lg:text-4xl font-extrabold text-brand mb-1">120+</div>
+              <div class="text-sm font-semibold text-slate-800">Modul Digital</div>
+              <p class="text-xs text-slate-500 mt-1">Materi & Soal Online</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition text-center">
+              <div class="text-3xl lg:text-4xl font-extrabold text-amber-500 mb-1"></div>
+              <div class="text-sm font-semibold text-slate-800">Karya Siswa</div>
+              <p class="text-xs text-slate-500 mt-1">Sastra, Seni & IT</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition text-center">
+              <div class="text-3xl lg:text-4xl font-extrabold text-emerald-600 mb-1">100%</div>
+              <div class="text-sm font-semibold text-slate-800">Haluan Aswaja</div>
+              <p class="text-xs text-slate-500 mt-1">Berkarakter Mulia</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="mading" class="page-section py-12 bg-amber-50/40">
+    <section id="elearning" class="page-section py-12 bg-slate-100/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-          <h1 class="text-3xl font-bold text-gray-800 border-b-4 border-primary pb-2 inline-block">Mading Kreativitas Siswa</h1>
-          <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Wadah apresiasi karya sastra dan tulisan inspiratif dari siswa-siswi MAS Miftahul Ulum Lenteng.</p>
-        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-t-4 border-t-amber-400 hover:shadow-md transition relative flex flex-col justify-between">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-slate-200 pb-6">
+          <div>
+            <span class="text-xs font-bold text-brand uppercase tracking-wider bg-indigo-50 px-3 py-1 rounded-md">Portal Akademik Online</span>
+            <h1 class="text-3xl font-extrabold text-slate-900 mt-2">E-Learning & Modul Pembelajaran</h1>
+            <p class="text-sm text-slate-600 mt-1">Akses materi pelajaran, unduh modul PDF, dan pantau tugas harianmu di sini.</p>
+          </div>
+
+          <div class="flex items-center gap-2 bg-white p-1.5 rounded-xl border border-slate-200 text-sm shadow-sm">
+            <button onclick="filterElearning('all')" class="el-filter-btn px-4 py-2 rounded-lg font-medium bg-brand text-white shadow-sm transition" data-grade="all">Semua Kelas</button>
+            <button onclick="filterElearning('X')" class="el-filter-btn px-4 py-2 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition" data-grade="X">Kelas X</button>
+            <button onclick="filterElearning('XI')" class="el-filter-btn px-4 py-2 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition" data-grade="XI">Kelas XI</button>
+            <button onclick="filterElearning('XII')" class="el-filter-btn px-4 py-2 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition" data-grade="XII">Kelas XII</button>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-secondary to-slate-800 rounded-2xl p-6 text-white mb-10 shadow-lg flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl">
+              📅
+            </div>
             <div>
-              <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md uppercase tracking-wider mb-3 inline-block">Puisi</span>
-              <h3 class="text-xl font-bold text-gray-800 mb-1">Binar di Ujung Lelah</h3>
-              <p class="text-xs text-gray-500 mb-4 italic font-medium">Oleh: Aisyah (Kelas XII-IPA)</p>
-              <div class="text-gray-700 text-sm italic whitespace-pre-line leading-relaxed mb-6 font-serif bg-amber-50/50 p-4 rounded-lg">
+              <h3 class="font-bold text-lg">Jadwal Kelas Virtual Hari Ini</h3>
+              <p class="text-xs text-slate-300 mt-0.5">Sesi Sinkronus & Diskusi Live via Google Meet / Zoom</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <div class="bg-white/10 px-4 py-2 rounded-xl text-xs backdrop-blur-sm border border-white/10">
+              <span class="text-emerald-400 font-bold">08:00 - 09:30</span> | Fiqih & Aswaja (XI IPA)
+            </div>
+            <div class="bg-white/10 px-4 py-2 rounded-xl text-xs backdrop-blur-sm border border-white/10">
+              <span class="text-amber-400 font-bold">10:00 - 11:30</span> | Informatika & Web (XII IPA)
+            </div>
+          </div>
+        </div>
+
+        <div id="elearning-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="el-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col justify-between" data-grade="XI">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800">Kelas XI • Keagamaan</span>
+                <span class="text-xs font-semibold text-slate-500">4 Modul Available</span>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900 mb-1">Fiqih & Ke-Aswaja-an Modern</h3>
+              <p class="text-xs text-slate-500 mb-4">Pengajar: Ustadz Ahmad, S.Pd.I</p>
+              <p class="text-sm text-slate-600 line-clamp-2 mb-6">Mempelajari dasar hukum muamalah kontemporer, etika digital Islami, serta prinsip-prinsip Ahlussunnah wal Jama'ah.</p>
+              
+              <div class="space-y-1.5 mb-4">
+                <div class="flex justify-between text-xs font-medium">
+                  <span class="text-slate-500">Progres Pembelajaran</span>
+                  <span class="text-brand font-bold">75%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2">
+                  <div class="bg-brand h-2 rounded-full" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-medium">Tugas Terakhir: 10 Sept</span>
+              <button onclick="openElearningModal('Fiqih & Ke-Aswaja-an Modern', 'XI', 'Ustadz Ahmad, S.Pd.I', 'Materi meliputi: 1. Muamalah Digital, 2. Konsensus Ulama Aswaja, 3. Etika Bermedia Sosial dalam Islam.', 'https://drive.google.com')" class="text-xs font-bold text-brand hover:text-indigo-800 transition flex items-center gap-1">
+                Buka Modul <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="el-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col justify-between" data-grade="XII">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-100 text-indigo-800">Kelas XII • IPA/IPS</span>
+                <span class="text-xs font-semibold text-slate-500">6 Modul Available</span>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900 mb-1">Informatika & Pemrograman Web</h3>
+              <p class="text-xs text-slate-500 mb-4">Pengajar: Bpk. Fathur Rahman, S.Kom</p>
+              <p class="text-sm text-slate-600 line-clamp-2 mb-6">Pengenalan dasar HTML, CSS Tailwind, JavaScript interaktif, dan etika pengelolaan website madrasah.</p>
+              
+              <div class="space-y-1.5 mb-4">
+                <div class="flex justify-between text-xs font-medium">
+                  <span class="text-slate-500">Progres Pembelajaran</span>
+                  <span class="text-brand font-bold">40%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2">
+                  <div class="bg-brand h-2 rounded-full" style="width: 40%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-medium">Tugas Terakhir: 15 Sept</span>
+              <button onclick="openElearningModal('Informatika & Pemrograman Web', 'XII', 'Bpk. Fathur Rahman, S.Kom', 'Materi meliputi: 1. Dasar HTML5 & CSS3, 2. Integrasi Tailwind CSS, 3. Interaktivitas JavaScript SPA.', 'https://drive.google.com')" class="text-xs font-bold text-brand hover:text-indigo-800 transition flex items-center gap-1">
+                Buka Modul <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="el-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition overflow-hidden flex flex-col justify-between" data-grade="X">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-amber-100 text-amber-800">Kelas X • Umum</span>
+                <span class="text-xs font-semibold text-slate-500">5 Modul Available</span>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900 mb-1">Bahasa Indonesia & Literasi Digital</h3>
+              <p class="text-xs text-slate-500 mb-4">Pengajar: Ibu Dian Murni, M.Pd</p>
+              <p class="text-sm text-slate-600 line-clamp-2 mb-6">Teknik penulisan esai ilmiah, apresiasi karya puisi dan cerita pendek, serta analisis teks berita.</p>
+              
+              <div class="space-y-1.5 mb-4">
+                <div class="flex justify-between text-xs font-medium">
+                  <span class="text-slate-500">Progres Pembelajaran</span>
+                  <span class="text-brand font-bold">90%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2">
+                  <div class="bg-brand h-2 rounded-full" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-medium">Selesai</span>
+              <button onclick="openElearningModal('Bahasa Indonesia & Literasi Digital', 'X', 'Ibu Dian Murni, M.Pd', 'Materi meliputi: 1. Struktur Esai Kritis, 2. Kaidah Kebahasaan, 3. Penulisan Opini & Sastra Mading.', 'https://drive.google.com')" class="text-xs font-bold text-brand hover:text-indigo-800 transition flex items-center gap-1">
+                Buka Modul <span>→</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7">
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-md">Upload Portal</span>
+              <h2 class="text-2xl font-bold text-slate-900 mt-2">Kirim Tugas & Lembar Kerja Online</h2>
+              <p class="text-sm text-slate-600 mt-2">Kumpulkan tugas mandiri atau kelompok dalam format dokumen (PDF/Word/ZIP) sesuai arahan guru pengampu.</p>
+            </div>
+            <div class="md:col-span-5 text-right">
+              <button onclick="alert('Silakan login dengan akun NISN siswa untuk mengupload tugas harian.')" class="w-full sm:w-auto bg-brand hover:bg-indigo-700 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-md inline-flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                Unggah Tugas Siswa
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="kreativitas" class="page-section py-12 bg-amber-50/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-md uppercase tracking-wider">Ruang Ekspresi & Inovasi</span>
+          <h1 class="text-3xl font-extrabold text-slate-900 mt-2">Wadah Kreativitas Digital Siswa</h1>
+          <p class="mt-2 text-slate-600 text-sm">Galeri apresiasi karya puisi, cerita pendek, galeri desain grafis, dan proyek sains-teknologi siswa MAS Miftahul Ulum Lenteng.</p>
+        </div>
+
+        <div class="flex justify-center flex-wrap gap-2 mb-10">
+          <button onclick="filterKreativitas('all')" class="kr-filter-btn bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow-sm" data-cat="all">Semua Karya</button>
+          <button onclick="filterKreativitas('Sastra')" class="kr-filter-btn bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold border border-slate-200" data-cat="Sastra">Sastra (Puisi/Cerpen)</button>
+          <button onclick="filterKreativitas('Desain')" class="kr-filter-btn bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold border border-slate-200" data-cat="Desain">Desain Digital & Seni</button>
+          <button onclick="filterKreativitas('Sains')" class="kr-filter-btn bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold border border-slate-200" data-cat="Sains">Proyek Kreativitas siswa</button>
+        </div>
+
+        <div id="kreativitas-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="kr-card bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-md transition" data-cat="Sastra">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md">Puisi</span>
+                <span class="text-[11px] text-slate-400">Agustus 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-1">Binar di Ujung Lelah</h3>
+              <p class="text-xs text-slate-500 mb-4 font-medium">Oleh: Alfin  (Tenaga Kependidikan MA Mif-U)</p>
+              <div class="text-slate-700 text-sm italic whitespace-pre-line leading-relaxed mb-6 font-serif bg-amber-50/50 p-4 rounded-xl border border-amber-100">
                 Mentari merayap di ufuk timur,
                 Membangunkan asa yang sempat tertidur.
                 Buku usang di sudut meja,
                 Menjadi saksi bisu perjuangan kita...
               </div>
             </div>
-            <button onclick="openMadingModal('Binar di Ujung Lelah', 'Aisyah (Kelas XII-IPA)', 'Puisi', `Mentari merayap di ufuk timur,\nMembangunkan asa yang sempat tertidur.\nBuku usang di sudut meja,\nMenjadi saksi bisu perjuangan kita.\n\nBukan emas yang kami cari,\nMelainkan ridho Illahi Rabbi.\nLangkah kaki tak kan terhenti,\nDemi cita luhur di dalam hati.`)" class="text-amber-700 font-semibold text-sm hover:underline self-start flex items-center gap-1">
-              Baca Puisi Lengkap <span>→</span>
+            <button onclick="openMadingModal('Binar di Ujung Lelah', 'Hozaimah (Guru MA Mif-U)', 'Puisi', `Mentari merayap di ufuk timur,\nMembangunkan asa yang sempat tertidur.\nBuku usang di sudut meja,\nMenjadi saksi bisu perjuangan kita.\n\nBukan emas yang kami cari,\nMelainkan ridho Illahi Rabbi.\nLangkah kaki tak kan terhenti,\nDemi cita luhur di dalam hati.`)" class="text-amber-700 font-bold text-xs hover:underline flex items-center gap-1">
+              Baca Selengkapnya <span>→</span>
             </button>
           </div>
 
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-t-4 border-t-blue-400 hover:shadow-md transition relative flex flex-col justify-between">
+          <div class="kr-card bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-md transition" data-cat="Sastra">
             <div>
-              <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-md uppercase tracking-wider mb-3 inline-block">Cerpen</span>
-              <h3 class="text-xl font-bold text-gray-800 mb-1">Sepeda Onthel Sang Kiai</h3>
-              <p class="text-xs text-gray-500 mb-4 italic font-medium">Oleh: Budi Santoso (Kelas XI-IPS)</p>
-              <p class="text-gray-700 text-sm line-clamp-5 leading-relaxed mb-6 text-justify bg-blue-50/40 p-4 rounded-lg">
-                "Kring... kring..." suara itu selalu kurindukan setiap pagi di gerbang madrasah. Itu adalah suara sepeda onthel tua milik Kiai Hasan. Beliau selalu datang lebih awal dari siapapun. Meski banyak wali murid yang menawarkan tumpangan mobil, beliau selalu menolak dengan senyuman khasnya...
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-md">Cerpen</span>
+                <span class="text-[11px] text-slate-400">Agustus 2026</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-1">Sepeda Onthel Sang Kiai</h3>
+              <p class="text-xs text-slate-500 mb-4 font-medium">Oleh: Zulfatul Laili (Guru MA Mif-U)</p>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6 bg-slate-50 p-4 rounded-xl line-clamp-4">
+                "Kring... kring..." suara itu selalu kurindukan setiap pagi di gerbang madrasah. Itu adalah suara sepeda onthel tua milik Kiai Hasan. Beliau selalu datang lebih awal dari siapapun...
               </p>
             </div>
-            <button onclick="openMadingModal('Sepeda Onthel Sang Kiai', 'Budi Santoso (Kelas XI-IPS)', 'Cerpen', `"Kring... kring..." suara itu selalu kurindukan setiap pagi di gerbang madrasah. Itu adalah suara sepeda onthel tua milik Kiai Hasan. Beliau selalu datang lebih awal dari siapapun. Meski banyak wali murid yang menawarkan tumpangan mobil, beliau selalu menolak dengan senyuman khasnya.\n\nDi atas boncengan sepeda yang mulai berkarat itu, tersimpan banyak filosofi tentang kesederhanaan dan keikhlasan dalam mengajar. Kiai Hasan mengajarkan kami bahwa kemuliaan tidak diukur dari kemewahan kendaraan, melainkan dari konsistensi dan ilmu yang bermanfaat bagi orang lain.`)" class="text-blue-700 font-semibold text-sm hover:underline self-start flex items-center gap-1">
+            <button onclick="openMadingModal('Sepeda Onthel Sang Kiai', 'Budi Santoso (Kelas XI-IPS)', 'Cerpen', `"Kring... kring..." suara itu selalu kurindukan setiap pagi di gerbang madrasah. Itu adalah suara sepeda onthel tua milik Kiai Hasan. Beliau selalu datang lebih awal dari siapapun. Meski banyak wali murid yang menawarkan tumpangan mobil, beliau selalu menolak dengan senyuman khasnya.\n\nDi atas boncengan sepeda yang mulai berkarat itu, tersimpan banyak filosofi tentang kesederhanaan dan keikhlasan dalam mengajar. Kiai Hasan mengajarkan kami bahwa kemuliaan tidak diukur dari kemewahan kendaraan, melainkan dari konsistensi dan ilmu yang bermanfaat bagi orang lain.`)" class="text-blue-700 font-bold text-xs hover:underline flex items-center gap-1">
               Baca Cerpen Lengkap <span>→</span>
             </button>
           </div>
 
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-t-4 border-t-amber-400 hover:shadow-md transition relative flex flex-col justify-between">
+          <div class="kr-card bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 flex flex-col justify-between hover:shadow-md transition" data-cat="Desain">
             <div>
-              <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md uppercase tracking-wider mb-3 inline-block">Puisi</span>
-              <h3 class="text-xl font-bold text-gray-800 mb-1">Tasbih Malam</h3>
-              <p class="text-xs text-gray-500 mb-4 italic font-medium">Oleh: Siti Nurhaliza (Kelas X-Agama)</p>
-              <div class="text-gray-700 text-sm italic whitespace-pre-line leading-relaxed mb-6 font-serif bg-amber-50/50 p-4 rounded-lg">
-                Dalam sunyi ku bersimpuh,
-                Mengurai salah yang kian melepuh.
-                Butir tasbih menari di jemari,
-                Mengharap ampunan Sang Ilahi...
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2.5 py-1 rounded-md">Desain Digital</span>
+                <span class="text-[11px] text-slate-400">Juli 2026</span>
               </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-1">Poster Edukasi Aswaja Digital</h3>
+              <p class="text-xs text-slate-500 mb-4 font-medium">Oleh: Ahmad Faris (Kelas X-Agama)</p>
+              <img src="https://images.unsplash.com/photo-1542744094-3a31216914fc?q=80&w=600" alt="Poster Desain" class="w-full h-36 object-cover rounded-xl mb-4">
+              <p class="text-slate-600 text-xs mb-4">Inovasi poster grafis bertema toleransi dan nilai-nilai kebangsaan berhaluan Ahlussunnah wal Jama'ah.</p>
             </div>
-            <button onclick="openMadingModal('Tasbih Malam', 'Siti Nurhaliza (Kelas X-Agama)', 'Puisi', `Dalam sunyi ku bersimpuh,\nMengurai salah yang kian melepuh.\nButir tasbih menari di jemari,\nMengharap ampunan Sang Ilahi.\n\nDi sujud ketiga air mata menetes,\nMemohon petunjuk di jalan yang sukses.\nYa Tuhan bimbinglah langkah ini,\nAgar senantiasa di dalam lindungan-Mu yang suci.`)" class="text-amber-700 font-semibold text-sm hover:underline self-start flex items-center gap-1">
-              Baca Puisi Lengkap <span>→</span>
+            <button onclick="openMadingModal('Poster Edukasi Aswaja Digital', 'Ahmad Faris (Kelas X-Agama)', 'Desain Digital', 'Karya poster ini dirancang menggunakan perangkat lunak grafis modern untuk memvisualisasikan dakwah Islam yang ramah, santun, dan adaptif terhadap kemajuan teknologi.', 'https://images.unsplash.com/photo-1542744094-3a31216914fc?q=80&w=600')" class="text-purple-700 font-bold text-xs hover:underline flex items-center gap-1">
+              Lihat Detail Karya <span>→</span>
             </button>
           </div>
+
         </div>
 
-        <div class="mt-16 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 max-w-4xl mx-auto">
-          <div class="bg-accent text-white p-8 text-center relative overflow-hidden">
-            <h2 class="text-2xl font-bold relative z-10">Kirim Karya Madingmu!</h2>
-            <p class="mt-2 text-amber-50 text-sm relative z-10">Punya puisi, cerpen, atau artikel menarik? Kirimkan tulisanmu agar diterbitkan di Mading Digital Madrasah.</p>
+        <div class="mt-16 bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/80 max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white p-8 text-center relative">
+            <h2 class="text-2xl font-bold">Kirim Karya Mading & Portofoliomu!</h2>
+            <p class="mt-1 text-amber-100 text-sm">Punya puisi, cerpen, artikel, atau poster digital? Kirimkan tulisanmu agar diterbitkan di Mading Digital Madrasah.</p>
           </div>
+          
           <div class="p-8 md:p-10">
             <div id="mading-form-status" class="hidden mb-6 rounded-xl p-4 text-sm font-medium"></div> 
             
@@ -286,13 +480,13 @@
               
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="nama_penulis" class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap / Penulis <span class="text-red-500">*</span></label>
-                  <input type="text" id="nama_penulis" name="nama_penulis" required placeholder="Contoh: Fulanah" class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition outline-none">
+                  <label for="nama_penulis" class="block text-xs font-bold uppercase text-slate-700 mb-1">Nama Lengkap / Penulis <span class="text-red-500">*</span></label>
+                  <input type="text" id="nama_penulis" name="nama_penulis" required placeholder="Contoh: Fatimah Az-Zahra" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
                 </div>
                 <div>
-                  <label for="kelas" class="block text-sm font-semibold text-gray-700 mb-1">Kelas <span class="text-red-500">*</span></label>
-                  <select id="kelas" name="kelas" required class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition outline-none text-gray-600">
-                    <option value="" disabled selected>Pilih Kelas...</option>
+                  <label for="kelas" class="block text-xs font-bold uppercase text-slate-700 mb-1">Kelas <span class="text-red-500">*</span></label>
+                  <select id="kelas" name="kelas" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition text-slate-600">
+                    <option value="" disabled selected>Pilih Tingkat Kelas...</option>
                     <option value="X-Agama">X Agama</option>
                     <option value="X-Umum">X Umum</option>
                     <option value="XI-IPA">XI IPA</option>
@@ -305,45 +499,108 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="kategori" class="block text-sm font-semibold text-gray-700 mb-1">Kategori Karya <span class="text-red-500">*</span></label>
-                  <select id="kategori" name="kategori" required class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition outline-none text-gray-600">
+                  <label for="kategori" class="block text-xs font-bold uppercase text-slate-700 mb-1">Kategori Karya <span class="text-red-500">*</span></label>
+                  <select id="kategori" name="kategori" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition text-slate-600">
                     <option value="" disabled selected>Pilih Kategori...</option>
-                    <option value="Puisi">Puisi</option>
+                    <option value="Puisi">Puisi / Sastra</option>
                     <option value="Cerpen">Cerpen</option>
+                    <option value="Desain">Desain Digital & Seni</option>
+                    <option value="Sains">Proyek IT & Sains</option>
                     <option value="Artikel">Artikel / Opini</option>
-                    <option value="Lainnya">Lainnya</option>
                   </select>
                 </div>
                 <div>
-                  <label for="judul_karya" class="block text-sm font-semibold text-gray-700 mb-1">Judul Karya <span class="text-red-500">*</span></label>
-                  <input type="text" id="judul_karya" name="judul_karya" required placeholder="Tuliskan judul karyamu" class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition outline-none">
+                  <label for="judul_karya" class="block text-xs font-bold uppercase text-slate-700 mb-1">Judul Karya <span class="text-red-500">*</span></label>
+                  <input type="text" id="judul_karya" name="judul_karya" required placeholder="Tuliskan judul karyamu" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
                 </div>
               </div>
 
               <div>
-                <label for="isi_karya" class="block text-sm font-semibold text-gray-700 mb-1">Isi Karya <span class="text-red-500">*</span></label>
-                <textarea id="isi_karya" name="isi_karya" rows="6" required placeholder="Ketik atau paste karyamu di sini..." class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition outline-none"></textarea>
+                <label for="isi_karya" class="block text-xs font-bold uppercase text-slate-700 mb-1">Isi Karya / Deskripsi Proyek <span class="text-red-500">*</span></label>
+                <textarea id="isi_karya" name="isi_karya" rows="5" required placeholder="Ketik naskah puisi, cerita, atau deskripsi proyek digitalmu..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"></textarea>
               </div>
 
-              <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg text-sm text-blue-900">
-                <strong>Catatan:</strong> Karya yang dikirim akan direview terlebih dahulu oleh tim redaksi mading (Guru Pembina) sebelum dipublikasikan secara online di halaman ini.
+              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-xl text-xs text-amber-900">
+                <strong>Catatan Moderaor:</strong> Seluruh karya yang dikirim akan direview oleh Tim Pembina Ekstrakurikuler & Redaksi Mading sebelum dipublikasikan secara penuh di website.
               </div>
 
-              <button type="submit" id="btn-submit-mading" class="w-full flex justify-center py-4 px-4 rounded-xl shadow-md text-base font-bold text-white bg-accent hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition">
+              <button type="submit" id="btn-submit-mading" class="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-amber-500 hover:bg-amber-600 shadow-md transition text-sm">
                 Kirim Karya Mading
               </button>
             </form>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <section id="berita" class="page-section py-12 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+          <div>
+            <span class="text-xs font-bold text-primary uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md">Informasi Terkini</span>
+            <h1 class="text-3xl font-extrabold text-slate-900 mt-1">Berita & Pengumuman Sekolah</h1>
+          </div>
+          
+          <button onclick="fetchBerita()" class="text-xs font-bold bg-white border border-slate-200 text-slate-700 px-4 py-2.5 rounded-xl hover:bg-slate-100 flex items-center transition shadow-sm gap-2">
+            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            Muat Ulang Berita
+          </button>
         </div>
+
+        <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="col-span-full text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent"></div>
+            <p class="text-slate-500 text-sm mt-2">Memuat berita dari database Google Spreadsheet...</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="profil" class="page-section py-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md">Tentang Madrasah</span>
+          <h1 class="text-3xl font-extrabold text-slate-900 mt-2">Profil MAS Miftahul Ulum Lenteng</h1>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 mb-8">
+          <h2 class="text-xl font-bold text-primary mb-3 flex items-center gap-2"><span>🏛️</span> Sejarah Singkat</h2>
+          <p class="text-slate-600 text-sm leading-relaxed text-justify">
+            MAS Miftahul Ulum Lenteng didirikan di Kecamatan Lenteng, Kabupaten Sumenep sebagai wujud kontribusi nyata dalam melahirkan generasi muda Islam yang berakhlak mulia, menguasai ilmu agama berhaluan Ahlussunnah wal Jama’ah, serta mampu bersaing di era sains dan teknologi digital.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 border-t-4 border-t-primary">
+            <h2 class="text-xl font-bold text-slate-900 mb-3 text-center">Visi Utama</h2>
+            <p class="text-slate-700 text-center text-sm italic font-medium leading-relaxed">
+              "Terwujudnya generasi yang bertaqwa, berilmu amaliah, beramal ilmiah, dan unggul dalam kecakapan digital di era modern."
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 border-t-4 border-t-primary">
+            <h2 class="text-xl font-bold text-slate-900 mb-3 text-center">Misi Pendidikan</h2>
+            <ul class="list-disc pl-5 text-slate-600 text-xs space-y-2">
+              <li>Menyelenggarakan pembelajaran integratif antara agama dan IPTEK.</li>
+              <li>Mengembangkan budaya literasi dan kreativitas karya digital siswa.</li>
+              <li>Membina akhlakul karimah berbasis tradisi ke-Aswaja-an.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <section id="ppdb" class="page-section py-12">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-          <div class="bg-primary text-white p-8 text-center relative overflow-hidden">
-            <h1 class="text-3xl font-bold relative z-10">Formulir Pendaftaran PPDB</h1>
-            <p class="mt-2 text-emerald-100 text-base relative z-10">Tahun Ajaran 2026/2027</p>
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/80">
+          <div class="bg-primary text-white p-8 text-center relative">
+            <h1 class="text-3xl font-extrabold">Formulir PPDB Online</h1>
+            <p class="mt-1 text-emerald-100 text-sm">Penerimaan Peserta Didik Baru Tahun Ajaran 2026/2027</p>
           </div>
           
           <div class="p-8 md:p-10">
@@ -351,33 +608,34 @@
             
             <form id="ppdb-form" name="submit-to-google-sheet" class="space-y-6">
               <input type="hidden" name="form_type" value="ppdb">
+              
               <div>
-                <label for="nama" class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap Sesuai Ijazah <span class="text-red-500">*</span></label>
-                <input type="text" id="nama" name="nama" required placeholder="Contoh: Ahmad Fulan" class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-primary focus:border-primary transition outline-none">
+                <label for="nama" class="block text-xs font-bold uppercase text-slate-700 mb-1">Nama Lengkap Sesuai Ijazah <span class="text-red-500">*</span></label>
+                <input type="text" id="nama" name="nama" required placeholder="Contoh: Muhammad Rizky" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-primary outline-none transition">
               </div>
               
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="nisn" class="block text-sm font-semibold text-gray-700 mb-1">NISN (10 Digit) <span class="text-red-500">*</span></label>
-                  <input type="text" id="nisn" name="nisn" maxlength="10" required placeholder="10 Digit Nomor Induk" class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-primary focus:border-primary transition outline-none">
+                  <label for="nisn" class="block text-xs font-bold uppercase text-slate-700 mb-1">NISN (10 Digit Angka) <span class="text-red-500">*</span></label>
+                  <input type="text" id="nisn" name="nisn" maxlength="10" required placeholder="10 Digit NISN" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-primary outline-none transition">
                 </div>
                 <div>
-                  <label for="no_wa" class="block text-sm font-semibold text-gray-700 mb-1">No. WhatsApp Aktif <span class="text-red-500">*</span></label>
-                  <input type="tel" id="no_wa" name="no_wa" required placeholder="Contoh: 081234567890" class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-primary focus:border-primary transition outline-none">
+                  <label for="no_wa" class="block text-xs font-bold uppercase text-slate-700 mb-1">No. WhatsApp Aktif <span class="text-red-500">*</span></label>
+                  <input type="tel" id="no_wa" name="no_wa" required placeholder="Contoh: 081234567890" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-primary outline-none transition">
                 </div>
               </div>
 
               <div>
-                <label for="asal_sekolah" class="block text-sm font-semibold text-gray-700 mb-1">Asal Sekolah (SMP/MTs) <span class="text-red-500">*</span></label>
-                <input type="text" id="asal_sekolah" name="asal_sekolah" required placeholder="Contoh: MTsN 1 Sumenep" class="block w-full border-gray-300 bg-gray-50 rounded-lg border p-3 focus:bg-white focus:ring-2 focus:ring-primary focus:border-primary transition outline-none">
+                <label for="asal_sekolah" class="block text-xs font-bold uppercase text-slate-700 mb-1">Asal Sekolah (SMP / MTs) <span class="text-red-500">*</span></label>
+                <input type="text" id="asal_sekolah" name="asal_sekolah" required placeholder="Contoh: MTs Negeri 1 Sumenep" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:bg-white focus:ring-2 focus:ring-primary outline-none transition">
               </div>
               
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-lg text-sm text-amber-900">
-                <strong>Informasi:</strong> Data Anda akan tersimpan langsung ke Google Spreadsheet panitia. Panitia PPDB akan segera menghubungi nomor WhatsApp Anda.
+              <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-xl text-xs text-emerald-900">
+                <strong>Informasi Pendaftaran:</strong> Data calon siswa tersimpan langsung ke sistem panitia PPDB. Petugas pendaftaran akan menghubungi nomor WhatsApp Anda untuk verifikasi berkas.
               </div>
 
-              <button type="submit" id="btn-submit-ppdb" class="w-full flex justify-center py-4 px-4 rounded-xl shadow-md text-base font-bold text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition">
-                Kirim Data Pendaftaran
+              <button type="submit" id="btn-submit-ppdb" class="w-full py-3.5 px-4 rounded-xl font-bold text-white bg-primary hover:bg-emerald-700 shadow-md transition text-sm">
+                Kirim Pendaftaran PPDB
               </button>
             </form>
           </div>
@@ -387,42 +645,45 @@
 
     <section id="kontak" class="page-section py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-10 border-b-4 border-primary pb-2 inline-block mx-auto block w-max">Hubungi Kami</h1>
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold text-primary uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md">Layanan Informasi</span>
+          <h1 class="text-3xl font-extrabold text-slate-900 mt-2">Hubungi Sekretariat Madrasah</h1>
+        </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h2 class="text-2xl font-bold text-primary mb-6">Informasi Kontak & Sekretariat</h2>
-            <div class="space-y-6 text-gray-600">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80">
+            <h2 class="text-xl font-bold text-slate-900 mb-6">Sekretariat & IT Support</h2>
+            <div class="space-y-6 text-sm text-slate-600">
               <div class="flex items-start">
-                <div class="text-2xl mr-4 mt-1 bg-emerald-100 p-2.5 rounded-lg text-primary">📍</div>
+                <div class="text-xl mr-4 bg-emerald-100 p-2 rounded-lg text-primary">📍</div>
                 <div>
-                  <h3 class="font-bold text-gray-800">Alamat Madrasah</h3>
-                  <p>Jalan Raya Lenteng, Kecamatan Lenteng,<br>Kabupaten Sumenep, Jawa Timur 62461</p>
+                  <h3 class="font-bold text-slate-800">Alamat Lengkap</h3>
+                  <p>Jalan Raya Lenteng, Kecamatan Lenteng, Kabupaten Sumenep, Jawa Timur 62461</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <div class="text-2xl mr-4 mt-1 bg-emerald-100 p-2.5 rounded-lg text-primary">📞</div>
+                <div class="text-xl mr-4 bg-emerald-100 p-2 rounded-lg text-primary">📞</div>
                 <div>
-                  <h3 class="font-bold text-gray-800">Telepon / WhatsApp</h3>
-                  <p>+62 812-3456-7890 (Jam Kerja: 07.00 - 14.00 WIB)</p>
+                  <h3 class="font-bold text-slate-800">Telepon & WhatsApp</h3>
+                  <p>+62 812-3456-7890 (Layanan Jam Kerja: 07.00 - 14.00 WIB)</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <div class="text-2xl mr-4 mt-1 bg-emerald-100 p-2.5 rounded-lg text-primary">✉️</div>
+                <div class="text-xl mr-4 bg-emerald-100 p-2 rounded-lg text-primary">✉️</div>
                 <div>
-                  <h3 class="font-bold text-gray-800">Email</h3>
+                  <h3 class="font-bold text-slate-800">Email Resmi</h3>
                   <p>info@miftahululum-lenteng.sch.id</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-gray-200 rounded-xl shadow-sm overflow-hidden min-h-[350px]">
+          <div class="bg-slate-200 rounded-2xl overflow-hidden min-h-[320px]">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.553955673019!2d113.7844!3d-7.0031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9e436f564177d%3A0x6b2e1f5b08c42b0!2sLenteng%2C%20Sumenep!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
               width="100%" 
               height="100%" 
-              style="border:0; min-height: 350px;" 
+              style="border:0; min-height: 320px;" 
               allowfullscreen="" 
               loading="lazy"
               title="Peta Lokasi MAS Miftahul Ulum Lenteng">
@@ -431,48 +692,68 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <div id="content-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
-      <div class="p-6 border-b border-gray-100 flex justify-between items-start">
+  <div id="content-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      
+      <div class="p-6 border-b border-slate-100 flex justify-between items-start">
         <div>
-          <span id="modal-badge" class="text-xs font-bold text-primary bg-emerald-100 px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 inline-block">Detail</span>
-          <h3 id="modal-title" class="text-2xl font-bold text-gray-800">Judul Modal</h3>
-          <p id="modal-subtitle" class="text-xs text-gray-500 mt-1">Tanggal / Penulis</p>
+          <span id="modal-badge" class="text-[10px] font-bold text-primary bg-emerald-100 px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 inline-block">Detail</span>
+          <h3 id="modal-title" class="text-xl font-bold text-slate-900">Judul Modal</h3>
+          <p id="modal-subtitle" class="text-xs text-slate-500 mt-0.5">Subtitle / Informasi tambahan</p>
         </div>
-        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 p-1 text-2xl font-bold">×</button>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1 text-2xl font-bold">×</button>
       </div>
+
       <div class="p-6 overflow-y-auto space-y-4">
-        <img id="modal-image" src="" alt="Gambar Detail" class="w-full h-64 object-cover rounded-xl hidden mb-4">
-        <div id="modal-body" class="text-gray-700 leading-relaxed text-justify whitespace-pre-line text-sm md:text-base"></div>
+        <img id="modal-image" src="" alt="Detail Gambar" class="w-full h-56 object-cover rounded-xl hidden">
+        <div id="modal-body" class="text-slate-700 leading-relaxed text-sm whitespace-pre-line"></div>
       </div>
-      <div class="p-4 bg-gray-50 border-t border-gray-100 text-right">
-        <button onclick="closeModal()" class="px-5 py-2 bg-gray-800 text-white font-semibold rounded-lg text-sm hover:bg-gray-900 transition">Tutup</button>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+        <a id="modal-action-btn" href="#" target="_blank" class="hidden text-xs font-bold text-white bg-brand px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Akses Tautan External</a>
+        <button onclick="closeModal()" class="px-5 py-2 bg-slate-800 text-white font-semibold rounded-lg text-xs hover:bg-slate-900 transition ml-auto">Tutup Window</button>
       </div>
+
     </div>
   </div>
 
-  <footer class="bg-gray-900 text-white mt-auto py-10 border-t-4 border-primary">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <footer class="bg-secondary text-white mt-auto py-12 border-t-4 border-primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
       <div>
-        <h3 class="text-2xl font-bold mb-4 text-primary flex items-center">
-          <img src="https://drive.google.com/thumbnail?id=1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ&sz=w800" alt="Logo" class="h-8 w-8 object-contain mr-3 bg-white rounded p-0.5" referrerpolicy="no-referrer">
-          MAS Miftahul Ulum
-        </h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Madrasah Aliyah Swasta unggulan di Lenteng yang berfokus pada keseimbangan pendidikan akhlak ahlussunnah wal jamaah dan teknologi terapan.</p>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="https://drive.google.com/thumbnail?id=1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ&sz=w800" alt="Logo MAS Miftahul Ulum" class="h-8 w-auto bg-white rounded p-0.5" referrerpolicy="no-referrer">
+          <span class="font-bold text-base text-white">MAS Miftahul Ulum Lenteng</span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Madrasah Aliyah Swasta modern di Lenteng - Sumenep yang mengintegrasikan kurikulum agama berhaluan Aswaja dengan pembelajaran digital dan wadah kreativitas siswa.
+        </p>
       </div>
+
       <div>
-        <h3 class="text-lg font-bold mb-4">Navigasi Cepat</h3>
-        <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="#" onclick="navigateTo('profil')" class="hover:text-primary transition flex items-center"><span class="mr-2">›</span> Profil Madrasah</a></li>
-          <li><a href="#" onclick="navigateTo('mading')" class="hover:text-primary transition flex items-center"><span class="mr-2">›</span> Mading Kreativitas</a></li>
-          <li><a href="#" onclick="navigateTo('berita')" class="hover:text-primary transition flex items-center"><span class="mr-2">›</span> Pengumuman Terbaru</a></li>
-          <li><a href="#" onclick="navigateTo('ppdb')" class="hover:text-primary transition flex items-center text-primary font-semibold"><span class="mr-2">›</span> PPDB Online</a></li>
+        <h3 class="font-bold text-white mb-4">Navigasi Portal</h3>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li><a href="#" onclick="navigateTo('elearning')" class="hover:text-emerald-400 transition">› Portal E-Learning & Modul</a></li>
+          <li><a href="#" onclick="navigateTo('kreativitas')" class="hover:text-emerald-400 transition">› Mading & Galeri Karya Siswa</a></li>
+          <li><a href="#" onclick="navigateTo('berita')" class="hover:text-emerald-400 transition">› Pengumuman Akademik Terbaru</a></li>
+          <li><a href="#" onclick="navigateTo('ppdb')" class="hover:text-emerald-400 transition text-emerald-400 font-semibold">› Pendaftaran PPDB Online</a></li>
         </ul>
       </div>
-      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm md:col-span-3">
-        © 2026 MAS Miftahul Ulum Lenteng. All rights reserved.
+
+      <div>
+        <h3 class="font-bold text-white mb-4">Pusat Layanan Siswa</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-3">
+          Mengalami kendala akun E-Learning atau pengiriman karya mading? Hubungi Tim IT Madrasah pada jam kerja.
+        </p>
+        <div class="text-xs font-mono text-emerald-400">
+          Email: support@miftahululum-lenteng.sch.id
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 mt-8 pt-6 text-center text-xs text-slate-500 md:col-span-3">
+        © 2026 MAS Miftahul Ulum Lenteng. Digital Campus & E-Learning System. All rights reserved.
       </div>
     </div>
   </footer>
@@ -481,9 +762,7 @@
     /* =========================================
        1. KONFIGURASI GOOGLE APPS SCRIPT
        ========================================= */
-    // URL Web App berhasil ditambahkan
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwBGM8ryIT0H_ZWilJCcT0zdGLFI8Z-VY4EyAZl9AxrhrMqyWPrJMzcpc5z95C-yJ1y0Q/exec';
-    
     let beritaCache = [];
 
     /* =========================================
@@ -499,18 +778,17 @@
 
       document.querySelectorAll('.nav-link').forEach(link => {
         if(link.getAttribute('data-target') === sectionId) {
-          link.classList.remove('text-gray-600');
-          link.classList.add('text-primary');
+          link.classList.add('text-primary', 'font-semibold');
+          link.classList.remove('text-slate-600');
         } else {
-          link.classList.remove('text-primary');
-          link.classList.add('text-gray-600');
+          link.classList.remove('text-primary', 'font-semibold');
+          link.classList.add('text-slate-600');
         }
       });
 
       document.getElementById('mobile-menu').classList.add('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Jika membuka halaman berita, otomatis refresh data
       if(sectionId === 'berita') {
         fetchBerita();
       }
@@ -521,15 +799,54 @@
     });
 
     /* =========================================
-       3. LOGIKA FETCH DATA BERITA DARI SHEET
+       3. FILTER LOGIC (E-LEARNING & KREATIVITAS)
+       ========================================= */
+    function filterElearning(grade) {
+      document.querySelectorAll('.el-filter-btn').forEach(btn => {
+        if(btn.getAttribute('data-grade') === grade) {
+          btn.className = 'el-filter-btn px-4 py-2 rounded-lg font-medium bg-brand text-white shadow-sm transition';
+        } else {
+          btn.className = 'el-filter-btn px-4 py-2 rounded-lg font-medium text-slate-600 hover:bg-slate-100 transition';
+        }
+      });
+
+      document.querySelectorAll('.el-card').forEach(card => {
+        if (grade === 'all' || card.getAttribute('data-grade') === grade) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function filterKreativitas(cat) {
+      document.querySelectorAll('.kr-filter-btn').forEach(btn => {
+        if(btn.getAttribute('data-cat') === cat) {
+          btn.className = 'kr-filter-btn bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow-sm';
+        } else {
+          btn.className = 'kr-filter-btn bg-white hover:bg-slate-100 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold border border-slate-200';
+        }
+      });
+
+      document.querySelectorAll('.kr-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    /* =========================================
+       4. FETCH DATA BERITA DARI GOOGLE SHEET
        ========================================= */
     async function fetchBerita() {
       const container = document.getElementById('news-container');
       
       container.innerHTML = `
         <div class="col-span-full text-center py-10">
-          <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
-          <p class="mt-2 text-gray-500 text-sm">Mengambil berita terbaru dari Sheet...</p>
+          <div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent"></div>
+          <p class="mt-2 text-slate-500 text-xs">Mengambil pengumuman terbaru...</p>
         </div>`;
 
       try {
@@ -539,14 +856,14 @@
         renderBeritaUI(beritaCache);
       } catch (error) {
         console.error('Error fetching berita:', error);
-        container.innerHTML = '<div class="col-span-full text-center py-10 text-red-500 text-sm">Gagal mengambil data dari Google Sheet. Pastikan Spreadsheet Anda memiliki Sheet bernama "Berita".</div>';
+        container.innerHTML = '<div class="col-span-full text-center py-10 text-red-500 text-sm">Gagal mengambil data dari server. Pastikan Google Sheet terhubung.</div>';
       }
     }
 
     function renderBeritaUI(items) {
       const container = document.getElementById('news-container');
       if (!items || items.length === 0) {
-        container.innerHTML = '<div class="col-span-full text-center py-10 text-gray-500 text-sm">Belum ada berita atau pengumuman saat ini di Sheet.</div>';
+        container.innerHTML = '<div class="col-span-full text-center py-10 text-slate-500 text-sm">Belum ada berita atau pengumuman saat ini.</div>';
         return;
       }
 
@@ -556,18 +873,18 @@
         const imgDefault = 'https://images.unsplash.com/photo-1546410531-ea4cea477149?q=80&w=600';
         
         const cardHTML = `
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300 flex flex-col h-full">
-            <img src="${item.gambar_url || imgDefault}" alt="${item.judul}" class="w-full h-48 object-cover">
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 overflow-hidden hover:shadow-md transition flex flex-col h-full">
+            <img src="${item.gambar_url || imgDefault}" alt="${item.judul}" class="w-full h-44 object-cover">
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <p class="text-xs text-emerald-700 font-semibold uppercase tracking-wider mb-2 flex items-center">
+                <p class="text-[11px] text-emerald-700 font-bold uppercase tracking-wider mb-2">
                   📅 ${tgl}
                 </p>
-                <h3 class="text-xl font-bold mb-2 text-gray-800 leading-tight">${item.judul}</h3>
-                <p class="text-gray-600 mb-4 text-sm line-clamp-3 leading-relaxed">${item.ringkasan || (item.konten ? item.konten.substring(0, 100) + '...' : '')}</p>
+                <h3 class="text-lg font-bold mb-2 text-slate-900 leading-tight">${item.judul}</h3>
+                <p class="text-slate-600 mb-4 text-xs line-clamp-3 leading-relaxed">${item.ringkasan || (item.konten ? item.konten.substring(0, 100) + '...' : '')}</p>
               </div>
-              <button onclick="openNewsModal('${item.id}')" class="text-primary font-bold text-sm hover:text-secondary flex items-center self-start gap-1">
-                Baca Selengkapnya <span>→</span>
+              <button onclick="openNewsModal('${item.id}')" class="text-primary font-bold text-xs hover:text-emerald-800 flex items-center gap-1 self-start">
+                Baca Pengumuman <span>→</span>
               </button>
             </div>
           </div>
@@ -577,17 +894,37 @@
     }
 
     /* =========================================
-       4. LOGIKA MODAL DETAIL (Berita & Mading)
+       5. MODAL SYSTEM HANDLERS
        ========================================= */
+    function openElearningModal(title, grade, teacher, description, linkUrl) {
+      document.getElementById('modal-badge').innerText = 'E-Learning Modul';
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-subtitle').innerText = `Kelas ${grade} • Pengajar: ${teacher}`;
+      document.getElementById('modal-body').innerText = description;
+      document.getElementById('modal-image').classList.add('hidden');
+
+      const actionBtn = document.getElementById('modal-action-btn');
+      if (linkUrl) {
+        actionBtn.href = linkUrl;
+        actionBtn.classList.remove('hidden');
+      } else {
+        actionBtn.classList.add('hidden');
+      }
+
+      document.getElementById('content-modal').classList.remove('hidden');
+      document.body.classList.add('modal-active');
+    }
+
     function openNewsModal(id) {
       const news = beritaCache.find(n => n.id == id);
       if (!news) return;
 
       const tgl = news.tanggal_publikasi ? new Date(news.tanggal_publikasi).toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'}) : 'Terbaru';
-      document.getElementById('modal-badge').innerText = 'Berita';
+      document.getElementById('modal-badge').innerText = 'Berita & Pengumuman';
       document.getElementById('modal-title').innerText = news.judul;
       document.getElementById('modal-subtitle').innerText = `Dipublikasikan pada: ${tgl}`;
       document.getElementById('modal-body').innerText = news.konten || '';
+      document.getElementById('modal-action-btn').classList.add('hidden');
       
       const imgElem = document.getElementById('modal-image');
       if (news.gambar_url) {
@@ -601,12 +938,20 @@
       document.body.classList.add('modal-active');
     }
 
-    function openMadingModal(title, author, category, bodyText) {
+    function openMadingModal(title, author, category, bodyText, imgUrl) {
       document.getElementById('modal-badge').innerText = category;
       document.getElementById('modal-title').innerText = title;
-      document.getElementById('modal-subtitle').innerText = `Penulis: ${author}`;
+      document.getElementById('modal-subtitle').innerText = `Karya Oleh: ${author}`;
       document.getElementById('modal-body').innerText = bodyText;
-      document.getElementById('modal-image').classList.add('hidden');
+      document.getElementById('modal-action-btn').classList.add('hidden');
+
+      const imgElem = document.getElementById('modal-image');
+      if (imgUrl) {
+        imgElem.src = imgUrl;
+        imgElem.classList.remove('hidden');
+      } else {
+        imgElem.classList.add('hidden');
+      }
 
       document.getElementById('content-modal').classList.remove('hidden');
       document.body.classList.add('modal-active');
@@ -618,25 +963,22 @@
     }
 
     /* =========================================
-       5. LOGIKA FORM SUBMIT (PPDB & MADING)
+       6. FORM SUBMISSION HANDLERS
        ========================================= */
-       
-    // --- Form PPDB ---
+    // --- PPDB Form ---
     const formPPDB = document.forms['submit-to-google-sheet'];
     if(formPPDB) {
       formPPDB.addEventListener('submit', async (e) => {
         e.preventDefault(); 
-        
         const btnSubmit = document.getElementById('btn-submit-ppdb');
         const statusMsg = document.getElementById('form-status');
         const nisnVal = document.getElementById('nisn').value.trim();
         
         statusMsg.classList.add('hidden');
 
-        // Validasi NISN 10 Digit
         if(nisnVal.length !== 10 || isNaN(nisnVal)) {
           statusMsg.innerHTML = '<strong>Peringatan!</strong> NISN harus berisi tepat 10 digit angka.';
-          statusMsg.className = 'mb-6 rounded-xl p-4 text-sm font-medium bg-amber-100 text-amber-900 border-l-4 border-amber-500';
+          statusMsg.className = 'mb-6 rounded-xl p-4 text-xs font-medium bg-amber-100 text-amber-900 border-l-4 border-amber-500';
           statusMsg.classList.remove('hidden');
           return;
         }
@@ -646,22 +988,17 @@
         btnSubmit.disabled = true;
 
         try {
-          const response = await fetch(scriptURL, { 
-            method: 'POST', 
-            body: new FormData(formPPDB)
-          });
+          const response = await fetch(scriptURL, { method: 'POST', body: new FormData(formPPDB) });
+          if (!response.ok) throw new Error('Gagal mengirim ke server');
 
-          if (!response.ok) throw new Error('Gagal mengirim ke Sheet');
-
-          statusMsg.innerHTML = '<strong>Alhamdulillah!</strong> Data pendaftaran Anda berhasil terkirim dan disimpan ke Google Spreadsheet.';
-          statusMsg.className = 'mb-6 rounded-xl p-4 text-sm font-medium bg-emerald-100 text-emerald-800 border-l-4 border-emerald-500';
+          statusMsg.innerHTML = '<strong>Alhamdulillah!</strong> Data pendaftaran PPDB Anda berhasil terkirim ke sistem.';
+          statusMsg.className = 'mb-6 rounded-xl p-4 text-xs font-medium bg-emerald-100 text-emerald-800 border-l-4 border-emerald-500';
           statusMsg.classList.remove('hidden');
-          
           formPPDB.reset(); 
         } catch (error) {
-          console.error('Insert error:', error);
-          statusMsg.innerHTML = '<strong>Terjadi Kesalahan!</strong> Gagal menyimpan data pendaftaran. Pastikan koneksi internet stabil.';
-          statusMsg.className = 'mb-6 rounded-xl p-4 text-sm font-medium bg-red-100 text-red-800 border-l-4 border-red-500';
+          console.error('Submit error:', error);
+          statusMsg.innerHTML = '<strong>Terjadi Kesalahan!</strong> Gagal menyimpan data pendaftaran.';
+          statusMsg.className = 'mb-6 rounded-xl p-4 text-xs font-medium bg-red-100 text-red-800 border-l-4 border-red-500';
           statusMsg.classList.remove('hidden');
         } finally {
           btnSubmit.innerHTML = originalBtnText;
@@ -670,39 +1007,31 @@
       });
     }
 
-    // --- Form Mading Digital ---
+    // --- Mading Form ---
     const formMading = document.forms['submit-mading-to-google-sheet'];
     if(formMading) {
       formMading.addEventListener('submit', async (e) => {
         e.preventDefault(); 
-        
         const btnSubmit = document.getElementById('btn-submit-mading');
         const statusMsg = document.getElementById('mading-form-status');
         
         statusMsg.classList.add('hidden');
-        
         const originalBtnText = btnSubmit.innerHTML;
         btnSubmit.innerHTML = 'Mengirim Karya...';
         btnSubmit.disabled = true;
 
         try {
-          // Melakukan POST request ke URL script yang sama
-          const response = await fetch(scriptURL, { 
-            method: 'POST', 
-            body: new FormData(formMading)
-          });
+          const response = await fetch(scriptURL, { method: 'POST', body: new FormData(formMading) });
+          if (!response.ok) throw new Error('Gagal mengirim karya');
 
-          if (!response.ok) throw new Error('Gagal mengirim karya ke Sheet');
-
-          statusMsg.innerHTML = '<strong>Hebat!</strong> Karyamu berhasil dikirim. Guru pembina akan segera mereview karyamu sebelum diterbitkan!';
-          statusMsg.className = 'mb-6 rounded-xl p-4 text-sm font-medium bg-emerald-100 text-emerald-800 border-l-4 border-emerald-500';
+          statusMsg.innerHTML = '<strong>Hebat!</strong> Karyamu berhasil dikirim. Guru pembina akan meriview karyamu sebelum dipublikasikan!';
+          statusMsg.className = 'mb-6 rounded-xl p-4 text-xs font-medium bg-emerald-100 text-emerald-800 border-l-4 border-emerald-500';
           statusMsg.classList.remove('hidden');
-          
           formMading.reset(); 
         } catch (error) {
-          console.error('Insert error:', error);
-          statusMsg.innerHTML = '<strong>Ups, Terjadi Kesalahan!</strong> Gagal mengirim karya. Pastikan koneksi internetmu stabil dan coba lagi.';
-          statusMsg.className = 'mb-6 rounded-xl p-4 text-sm font-medium bg-red-100 text-red-800 border-l-4 border-red-500';
+          console.error('Submit error:', error);
+          statusMsg.innerHTML = '<strong>Terjadi Kesalahan!</strong> Gagal mengirim karya mading.';
+          statusMsg.className = 'mb-6 rounded-xl p-4 text-xs font-medium bg-red-100 text-red-800 border-l-4 border-red-500';
           statusMsg.classList.remove('hidden');
         } finally {
           btnSubmit.innerHTML = originalBtnText;
