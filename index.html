@@ -86,7 +86,6 @@
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white">
 
-  <!-- Top Announcement Bar -->
   <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
       <div class="flex items-center space-x-2">
@@ -109,16 +108,14 @@
     </div>
   </div>
 
-  <!-- Header / Navigation Bar -->
   <nav class="glass-nav sticky top-[33px] z-40 border-b border-slate-200/80 shadow-subtle">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         
-        <!-- Logo Brand -->
         <div class="flex items-center">
           <a href="#" onclick="navigateTo('beranda')" class="flex-shrink-0 flex items-center space-x-3 group">
             <div class="p-1 bg-emerald-700 rounded-xl shadow-sm group-hover:bg-emerald-800 transition">
-              <img src="https://drive.google.com/thumbnail?id=1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ&sz=w800" alt="Logo MAS MIFTAHUL ULUM LENTENG" class="h-8 sm:h-9 w-auto object-contain bg-white rounded-lg p-0.5" referrerpolicy="no-referrer">
+              <img src="https://lh3.googleusercontent.com/d/1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ" alt="Logo MAS MIFTAHUL ULUM LENTENG" class="h-8 sm:h-9 w-auto object-contain bg-white rounded-lg p-0.5" referrerpolicy="no-referrer">
             </div>
             <div class="flex flex-col">
               <span class="font-extrabold text-sm sm:text-base text-slate-900 leading-tight group-hover:text-primary transition tracking-tight">MAS MIFTAHUL ULUM</span>
@@ -127,7 +124,6 @@
           </a>
         </div>
         
-        <!-- Desktop Nav -->
         <div class="hidden lg:flex items-center space-x-1 font-semibold text-xs sm:text-sm">
           <a href="#" onclick="navigateTo('beranda')" class="nav-link text-primary bg-emerald-50 font-bold px-3.5 py-2 rounded-lg hover:bg-emerald-100/80 transition" data-target="beranda">Beranda</a>
           
@@ -148,7 +144,6 @@
           </div>
         </div>
         
-        <!-- Mobile Menu Toggle Button -->
         <div class="flex items-center lg:hidden">
           <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-primary p-2 rounded-lg hover:bg-slate-100 active:bg-slate-200 focus:outline-none transition border border-slate-200" aria-label="Buka Navigasi">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -159,7 +154,6 @@
       </div>
     </div>
     
-    <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="lg:hidden hidden bg-white border-b border-slate-200 shadow-lg absolute w-full left-0 z-50">
       <div class="px-4 pt-3 pb-5 space-y-1.5 text-sm font-semibold">
         <a href="#" onclick="navigateTo('beranda')" class="block px-3.5 py-2.5 rounded-lg bg-emerald-50 text-primary font-bold transition flex items-center gap-2.5">
@@ -192,10 +186,8 @@
 
   <main class="flex-grow">
     
-    <!-- BERANDA SECTION -->
     <section id="beranda" class="page-section active animate-fade-in">
       
-      <!-- Hero Banner Section -->
       <div class="relative bg-slate-900 text-white py-12 sm:py-16 lg:py-20 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -225,13 +217,11 @@
               </div>
             </div>
 
-            <!-- Hero Image & Quick Feature Cards -->
             <div class="lg:col-span-5 relative flex flex-col items-center justify-center">
               <div class="w-full bg-slate-800/80 p-2 rounded-2xl border border-slate-700/80 shadow-lg">
-                <img src="https://drive.google.com/thumbnail?id=1P4EJ-6LPN_jub8ErobnjUdHpW5gJci5x&sz=w1000" alt="Dewan Guru MAS MIFTAHUL ULUM LENTENG" class="w-full object-cover rounded-xl shadow-inner max-h-64 sm:max-h-72" referrerpolicy="no-referrer">
+                <img src="https://lh3.googleusercontent.com/d/1P4EJ-6LPN_jub8ErobnjUdHpW5gJci5x" alt="Dewan Guru MAS MIFTAHUL ULUM LENTENG" class="w-full object-cover rounded-xl shadow-inner max-h-64 sm:max-h-72" referrerpolicy="no-referrer">
               </div>
 
-              <!-- Quick Features Bar -->
               <div class="w-full grid grid-cols-3 gap-2.5 mt-4">
                 <div onclick="navigateTo('kreativitas')" class="bg-white p-3 rounded-xl text-slate-800 shadow-subtle border border-slate-200 text-center cursor-pointer hover:border-indigo-500 hover:shadow-md transition">
                   <div class="w-7 h-7 mx-auto mb-1 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center">
@@ -262,11 +252,9 @@
         </div>
       </div>
 
-      <!-- Sambutan Kepala Madrasah & Stats Grid -->
       <div class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          <!-- Sambutan -->
           <div class="lg:col-span-7 space-y-4">
             <span class="text-[11px] font-bold text-emerald-800 uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-md border border-emerald-200 inline-block">
               SAMBUTAN KEPALA MADRASAH
@@ -281,16 +269,23 @@
               Melalui portal resmi dan Wadah Kreativitas Digital ini, kami memberikan ruang terbuka bagi seluruh siswa untuk mempublikasikan karya terbaik mereka sekaligus menyajikan informasi terpercaya seputar kegiatan madrasah bagi masyarakat umum.
             </p>
             
-            <div class="pt-3 border-t border-slate-200 flex items-center gap-3">
-              <img src="https://drive.google.com/thumbnail?id=1rNfQUh6t0YZDXfRy29KoG2xNhNWG7v&sz=w800" alt="Hawanif, S.Ag., M.M.Pd." class="w-12 h-12 rounded-xl object-cover border border-slate-300 shadow-sm flex-shrink-0" referrerpolicy="no-referrer">
-              <div>
-                <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Hawanif, S.Ag., M.M.Pd.</h4>
-                <p class="text-[11px] text-emerald-700 font-semibold">Kepala MAS MIFTAHUL ULUM LENTENG</p>
+            <div class="pt-4 mt-2 border-t border-slate-200">
+              <div class="inline-flex items-center gap-3 bg-white p-1.5 pr-5 rounded-full border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition cursor-pointer">
+                <div class="relative flex-shrink-0">
+                  <img src="https://lh3.googleusercontent.com/d/1rNfQUh6t0YZDXfRy29FoKoG2xNhNWG7v" alt="Profil Hawanif, S.Ag., M.M.Pd." class="w-12 h-12 rounded-full object-cover border border-slate-200" referrerpolicy="no-referrer">
+                  <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full" title="Online"></span>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <div class="flex items-center gap-1">
+                    <h4 class="font-extrabold text-slate-900 text-xs sm:text-sm leading-none">Hawanif, S.Ag., M.M.Pd.</h4>
+                    <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  </div>
+                  <p class="text-[10px] text-slate-500 font-medium mt-1">@kepala_madrasah • <span class="text-emerald-600 font-bold">Akun Resmi</span></p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Stats Cards Grid -->
           <div class="lg:col-span-5 grid grid-cols-2 gap-3.5">
             
             <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-subtle hover:border-emerald-300 transition text-center">
@@ -335,7 +330,6 @@
       </div>
     </section>
 
-    <!-- WADAH KREATIVITAS / MADING SECTION -->
     <section id="kreativitas" class="page-section py-12 bg-slate-100/70 border-t border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -348,7 +342,6 @@
             <p class="text-xs sm:text-sm text-slate-600 mt-1">Ruang apresiasi tulisan, puisi, artikel, opini, dan seni grafis karya siswa MAS MIFTAHUL ULUM LENTENG.</p>
           </div>
 
-          <!-- Category Filter Tabs -->
           <div class="flex flex-wrap items-center gap-1.5 bg-white p-1.5 rounded-xl border border-slate-200 text-xs shadow-sm w-full md:w-auto">
             <button onclick="filterKreativitas('all')" class="kr-filter-btn flex-1 md:flex-none px-3.5 py-2 rounded-lg font-bold bg-indigo-600 text-white transition">Semua Karya</button>
             <button onclick="filterKreativitas('sastra')" class="kr-filter-btn flex-1 md:flex-none px-3.5 py-2 rounded-lg font-semibold text-slate-600 hover:bg-slate-100 transition">Puisi & Sastra</button>
@@ -357,7 +350,6 @@
           </div>
         </div>
 
-        <!-- Dynamic Grid Karya Mading -->
         <div id="mading-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           
           <div class="col-span-full bg-white rounded-2xl border border-slate-200 p-8 sm:p-12 text-center shadow-sm flex flex-col items-center justify-center">
@@ -376,7 +368,6 @@
 
         </div>
 
-        <!-- Form Pengiriman Karya Mading -->
         <div id="form-mading-anchor" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
           <div class="max-w-3xl mx-auto">
             <div class="text-center mb-6">
@@ -448,7 +439,6 @@
       </div>
     </section>
 
-    <!-- BERITA & PENGUMUMAN SECTION -->
     <section id="berita" class="page-section py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -468,7 +458,6 @@
       </div>
     </section>
 
-    <!-- PROFIL SECTION -->
     <section id="profil" class="page-section py-12 bg-slate-100/70 border-t border-slate-200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -478,7 +467,6 @@
         </div>
 
         <div class="space-y-6">
-          <!-- Sejarah -->
           <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
             <h2 class="text-base sm:text-xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
               <span class="p-2 bg-emerald-50 text-emerald-700 rounded-lg">
@@ -491,7 +479,6 @@
             </p>
           </div>
 
-          <!-- Visi & Misi -->
           <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
             <h2 class="text-base sm:text-xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
               <span class="p-2 bg-indigo-50 text-indigo-700 rounded-lg">
@@ -512,7 +499,6 @@
             </div>
           </div>
 
-          <!-- Ekstrakurikuler -->
           <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
             <h2 class="text-base sm:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2.5">
               <span class="p-2 bg-amber-50 text-amber-700 rounded-lg">
@@ -534,7 +520,6 @@
       </div>
     </section>
 
-    <!-- KONTAK SECTION -->
     <section id="kontak" class="page-section py-12">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -612,7 +597,6 @@
       </div>
     </section>
 
-    <!-- PPDB SECTION -->
     <section id="ppdb" class="page-section py-12 bg-slate-100/70 border-t border-slate-200">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -678,7 +662,6 @@
 
   </main>
 
-  <!-- CONTENT MODAL DIALOG -->
   <div id="content-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col border border-slate-200">
       
@@ -705,7 +688,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="bg-slate-950 text-white mt-auto border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -713,7 +695,7 @@
         <div class="md:col-span-6 space-y-3">
           <div class="flex items-center space-x-2.5">
             <div class="p-1 bg-emerald-700 rounded-lg">
-              <img src="https://drive.google.com/thumbnail?id=1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ&sz=w800" alt="Logo MAS MIFTAHUL ULUM LENTENG" class="h-8 w-auto bg-white rounded p-0.5" referrerpolicy="no-referrer">
+              <img src="https://lh3.googleusercontent.com/d/1xj5AeEbWisIpBlXpwJ_tbW7wMM8NsjjQ" alt="Logo MAS MIFTAHUL ULUM LENTENG" class="h-8 w-auto bg-white rounded p-0.5" referrerpolicy="no-referrer">
             </div>
             <div>
               <span class="font-extrabold text-sm text-white block tracking-tight">MAS MIFTAHUL ULUM</span>
@@ -752,7 +734,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT DATABASE & APP LOGIC -->
   <script>
     // URL Google Apps Script Database
     const scriptURL = 'https://script.google.com/macros/s/AKfycbx_XYZ/exec';
@@ -823,8 +804,8 @@
         tanggal: '13 Juli 2026',
         ringkasan: 'Dalam rangka meningkatkan mutu kedisiplinan dan mengoptimalkan pemanfaatan teknologi di lingkungan madrasah, MA Miftahul Ulum Lenteng Timur secara resmi memberlakukan sistem Presensi Digital bagi seluruh siswa, guru, serta tenaga kependidikan.',
         isi: 'Lenteng Timur, Sumenep — Dalam rangka meningkatkan mutu kedisiplinan dan mengoptimalkan pemanfaatan teknologi di lingkungan madrasah, MA Miftahul Ulum Lenteng Timur secara resmi memberlakukan sistem Presensi Digital bagi seluruh siswa, guru, serta tenaga kependidikan. Kebijakan baru ini mulai diberlakukan efektif terhitung sejak 13 Juli 2026.\n\nLangkah transformasi digital ini diambil sebagai komitmen madrasah untuk mengikuti perkembangan zaman sekaligus menciptakan tata kelola administrasi yang lebih transparan, akurat, dan efisien.\n\nKepala MA Miftahul Ulum menyampaikan bahwa penerapan presensi berbasis digital ini tidak hanya bertujuan untuk mencatat kehadiran secara lebih tertib, tetapi juga dirancang untuk memperkuat sinergi antara pihak madrasah dan orang tua siswa.\n\nKeunggulan dan Mekanisme Sistem Baru\nDengan sistem presensi digital ini, proses pencatatan kehadiran harian beralih dari cara konvensional ke sistem yang terintegrasi secara elektronik:\n\n• Bagi Siswa: Setiap siswa melakukan pencatatan kehadiran saat datang dan pulang sekolah menggunakan Scan QR Code. Data kehadiran akan langsung terekam di server madrasah secara real-time.\n• Bagi Guru dan Staf: Dewan guru dan tenaga kependidikan juga menggunakan perangkat digital yang sama untuk merekam jam kehadiran dan kepulangan guna mendukung kedisiplinan kerja.\n• Notifikasi untuk Orang Tua: Salah satu fitur unggulan dari sistem ini adalah integrasi pelaporan. Orang tua/wali murid nantinya dapat memantau kehadiran atau menerima informasi langsung terkait status kehadiran putra-putrinya di madrasah.\n\nHarapan Madrasah ke Depan\nPihak madrasah berharap seluruh warga madrasah—baik siswa, dewan guru, maupun orang tua/wali murid—dapat beradaptasi dengan cepat dan mendukung penuh pemberlakuan sistem baru ini. Kedisiplinan waktu merupakan salah satu kunci utama dalam membentuk karakter pelajar yang unggul, profesional, dan berintegritas.\n\nBagi siswa atau orang tua yang memiliki pertanyaan lebih lanjut atau memerlukan informasi teknis seputar penggunaan sistem presensi digital ini, silakan menghubungi bagian Layanan Informasi dan Tata Usaha (TU) MA Miftahul Ulum pada jam kerja operasional sekolah.\n\nEditor/Kontributor: Tim Media MA Miftahul Ulum Lenteng Timur.',
-        // URL direct link Google Drive via thumbnail endpoint
-        gambar: 'https://drive.google.com/thumbnail?id=1rLkkjCoJWVLCp6DjOVv-oiOt8KbpPzMz&sz=w1000'
+        // URL direct link Google Drive format baru
+        gambar: 'https://lh3.googleusercontent.com/d/1rLkkjCoJWVLCp6DjOVv-oiOt8KbpPzMz'
       }];
 
       try {
@@ -850,7 +831,7 @@
         container.innerHTML = `
           <div class="col-span-full bg-white rounded-2xl border border-slate-200 p-8 text-center shadow-sm">
             <div class="w-12 h-12 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center text-xl mx-auto mb-3">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
             </div>
             <h3 class="text-sm font-bold text-slate-900 mb-1">Belum Ada Berita Terbaru</h3>
             <p class="text-xs text-slate-500 max-w-sm mx-auto">Pengumuman resmi madrasah akan ditampilkan di sini secara berkala.</p>
