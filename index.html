@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="PGkcK3KD6jfyU2z0rWHpRkb6d2wDNDGS8lefje0fFVM" />
   <meta name="description" content="Portal Resmi & Wadah Kreativitas Digital Siswa MAS MIFTAHUL ULUM LENTENG - SUMENEP.">
   <title>Portal Resmi & Wadah Kreativitas Siswa - MAS MIFTAHUL ULUM LENTENG</title>
 
@@ -285,7 +286,7 @@
                     <h4 class="font-extrabold text-slate-900 text-xs sm:text-sm leading-none">Hawanif, S.Ag., M.M.Pd.</h4>
                     <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                   </div>
-                  <p class="text-[10px] text-slate-500 font-medium mt-1">@kepala_madrasah • <span class="text-emerald-600 font-bold"></span></p>
+                  <p class="text-[10px] text-slate-500 font-medium mt-1">@kepala_madrasah • <span class="text-emerald-600 font-bold">Akun Resmi</span></p>
                 </div>
               </div>
             </div>
@@ -317,7 +318,7 @@
               </div>
               <div class="text-xl font-extrabold text-slate-900">TERAKREDITASI B</div>
               <div class="text-xs font-bold text-slate-800 mt-0.5">Status Resmi</div>
-              <p class="text-[10px] text-slate-500 mt-0.5"></p>
+              <p class="text-[10px] text-slate-500 mt-0.5">Penilaian Pemerintah</p>
             </div>
 
             <div class="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-subtle hover:border-sky-300 transition text-center">
@@ -967,66 +968,6 @@
     function closeModal() {
       document.getElementById('content-modal').classList.add('hidden');
       document.body.classList.remove('modal-active');
-    }
-
-    // Form Submit PPDB Online
-    const formPPDB = document.getElementById('formPPDB');
-    if (formPPDB) {
-      formPPDB.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btnSubmit = document.getElementById('btn-submit-ppdb');
-        const statusMsg = document.getElementById('ppdb-form-status');
-
-        statusMsg.classList.add('hidden');
-        btnSubmit.innerText = 'Mengirim Data...';
-        btnSubmit.disabled = true;
-
-        try {
-          const response = await fetch(scriptURL, { method: 'POST', body: new FormData(formPPDB) });
-          statusMsg.innerHTML = '<strong>Alhamdulillah!</strong> Pendaftaran PPDB berhasil dikirim. Panitia akan segera menghubungi Anda.';
-          statusMsg.className = 'mb-5 rounded-xl p-3.5 text-xs font-medium bg-emerald-50 text-emerald-800 border-l-4 border-emerald-600 animate-fade-in';
-          statusMsg.classList.remove('hidden');
-          formPPDB.reset();
-        } catch (error) {
-          console.error('Submit error:', error);
-          statusMsg.innerHTML = '<strong>Terjadi Kesalahan!</strong> Mohon periksa koneksi internet Anda dan coba lagi.';
-          statusMsg.className = 'mb-5 rounded-xl p-3.5 text-xs font-medium bg-rose-50 text-rose-800 border-l-4 border-rose-600 animate-fade-in';
-          statusMsg.classList.remove('hidden');
-        } finally {
-          btnSubmit.innerText = 'KIRIM FORMULIR PENDAFTARAN PPDB';
-          btnSubmit.disabled = false;
-        }
-      });
-    }
-
-    // Form Submit Layanan Pengajuan Surat
-    const formSurat = document.getElementById('formSurat');
-    if (formSurat) {
-      formSurat.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btnSubmit = document.getElementById('btn-submit-surat');
-        const statusMsg = document.getElementById('surat-form-status');
-
-        statusMsg.classList.add('hidden');
-        btnSubmit.innerText = 'Mengirim Pengajuan...';
-        btnSubmit.disabled = true;
-
-        try {
-          const response = await fetch(scriptURL, { method: 'POST', body: new FormData(formSurat) });
-          statusMsg.innerHTML = '<strong>Berhasil!</strong> Pengajuan surat telah terkirim dan akan diproses oleh Tata Usaha.';
-          statusMsg.className = 'mb-5 rounded-xl p-3.5 text-xs font-medium bg-blue-50 text-blue-800 border-l-4 border-blue-600 animate-fade-in';
-          statusMsg.classList.remove('hidden');
-          formSurat.reset();
-        } catch (error) {
-          console.error('Submit error:', error);
-          statusMsg.innerHTML = '<strong>Terjadi Kesalahan!</strong> Mohon periksa koneksi internet Anda dan coba lagi.';
-          statusMsg.className = 'mb-5 rounded-xl p-3.5 text-xs font-medium bg-rose-50 text-rose-800 border-l-4 border-rose-600 animate-fade-in';
-          statusMsg.classList.remove('hidden');
-        } finally {
-          btnSubmit.innerText = 'AJUKAN SURAT';
-          btnSubmit.disabled = false;
-        }
-      });
     }
   </script>
 </body>
